@@ -196,8 +196,8 @@ class Game:
             #sampleText = self.font.render("Test", True, (0,0,0))
             #self.screen.blit(sampleText, (100,100))
             if self.render:
-                self.screen.blit(self.powerUp, (self.x + 32, self.y + 32))
-            if self.render and math.sqrt((ballPos[0] - (self.x + 32))**2 + (ballPos[1] - (self.y + 32))**2) < 42:
+                self.screen.blit(self.powerUp, (self.x - 32, self.y - 32))
+            if self.render and ballPos.distance_to((self.x, self.y)) < 42:
                 self.render = False
                 ballVelMag *= 0.8
                 powerCount += 1
